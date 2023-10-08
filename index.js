@@ -21,7 +21,67 @@ const text =
     return arr;
   }, []);
 
-Highcharts.chart('container', {
+Highcharts.chart('container1', {
+  accessibility: {
+    screenReaderSection: {
+      beforeChartFormat: '<h5>{chartTitle}</h5>' +
+        '<div>{chartSubtitle}</div>' +
+        '<div>{chartLongdesc}</div>' +
+        '<div>{viewTableButton}</div>'
+    }
+  },
+  series: [{
+    type: 'wordcloud',
+    data,
+    name: 'Occurrences'
+  }],
+  title: {
+    text: '',
+    align: 'left'
+  },
+  subtitle: {
+    text: '',
+    align: 'left'
+  },
+  tooltip: {
+    headerFormat: '<span style="font-size: 16px"><b>{point.key}</b></span><br>'
+  }
+});
+
+
+Highcharts.chart('container2', {
+  accessibility: {
+    screenReaderSection: {
+      beforeChartFormat: '<h5>{chartTitle}</h5>' +
+        '<div>{chartSubtitle}</div>' +
+        '<div>{chartLongdesc}</div>' +
+        '<div>{viewTableButton}</div>'
+    }
+  },
+  series: [{
+    type: 'wordcloud',
+    data,
+    name: 'Occurrences'
+  }],
+  title: {
+    text: '',
+    align: 'left'
+  },
+  subtitle: {
+    text: '',
+    align: 'left'
+  },
+  tooltip: {
+    headerFormat: '<span style="font-size: 16px"><b>{point.key}</b></span><br>'
+  }
+});
+
+
+
+
+
+
+Highcharts.chart('container3', {
   accessibility: {
     screenReaderSection: {
       beforeChartFormat: '<h5>{chartTitle}</h5>' +

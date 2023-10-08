@@ -622,16 +622,23 @@ p {
   top: 2.5px;
 }
 #depression-chart {
-  width: 100%;
+  /* width: 100%; */
+  height: 100%;
 }
 .image-dimensions-container {
-  border: red solid;
+  /* border: red solid; */
   padding: 0 !important;
+  
 }
-.highcharts-figure {
-    border: #000 solid;
-    /* width: 500px; */
-    /* height: 300px; */
+#container1,#container2,#container3{
+  height: 150px;
+  width: 400px;
+  margin: auto;
+  margin-bottom: -4rem;
+}
+.highcharts-figure{
+  /* border: #000 solid; */
+  
 }
 .highcharts-description{
  color: #fff;
@@ -1092,7 +1099,8 @@ table.mmp-table tr:first-child th:last-child {
   margin-top: 7px;
 }
 .movieContainer > div:last-child img {
-  width: 100px;
+  /* width: 100px; */
+  height: 200px;
   border-radius: 5px;
 }
 .foodContainer {
@@ -1734,6 +1742,12 @@ table.mmp-table tr:first-child th:last-child {
 }
 .mb-2 {
   margin-bottom: 2rem !important;
+}
+.mb-3 {
+  margin-bottom: 3rem !important;
+}
+.mb-4 {
+  margin-bottom: 4rem !important;
 }
 .-mb-2 {
   margin-bottom: -2rem !important;
