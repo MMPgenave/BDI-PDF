@@ -609,18 +609,35 @@ p {
   line-height: 25px; /* 166.667% */
   /* border: #000 solid; */
 }
-
+.content-container{
+  /* border: red solid; */
+  position: relative;
+}
 .line-For-Fehrest-A4-2 {
-  height: 715px;
+  height: calc(100% - 2.5px);
   width: 1.5px;
   background-color: #d7d7d7;
   position: absolute;
   right: 150px;
-  top: 177px;
+  top: 2.5px;
 }
 #depression-chart {
   width: 100%;
 }
+.image-dimensions-container {
+  border: red solid;
+  padding: 0 !important;
+}
+.highcharts-figure {
+    border: #000 solid;
+    /* width: 500px; */
+    /* height: 300px; */
+}
+.highcharts-description{
+ color: #fff;
+}
+
+
 .hint {
   border-radius: 5px;
   background: #fff7e3;
@@ -775,9 +792,7 @@ p {
   border-radius: 0px 4px 4px 0px;
   background: #2ebb9d;
 }
-.image-dimensions-container {
-  /* height: 150px; */
-}
+
 .image-dimensions {
   width: 50%;
   /* border: red solid; */
@@ -1719,6 +1734,9 @@ table.mmp-table tr:first-child th:last-child {
 }
 .mb-2 {
   margin-bottom: 2rem !important;
+}
+.-mb-2 {
+  margin-bottom: -2rem !important;
 }
 .pt-5 {
   padding-top: 5rem;
