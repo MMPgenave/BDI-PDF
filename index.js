@@ -1,109 +1,55 @@
-const text =
-  'Chapter 1. Down the Rabbit-Hole ' +
-  'Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: ' +
-  'once or twice she had peeped into the book her sister was reading, but it had no pictures or conversations ' +
-  'in it, \'and what is the use of a book,\' thought Alice \'without pictures or conversation?\'' +
-  'So she was considering in her own mind (as well as she could, for the hot day made her feel very sleepy ' +
-  'and stupid), whether the pleasure of making a daisy-chain would be worth the trouble of getting up and picking ' +
-  'the daisies, when suddenly a White Rabbit with pink eyes ran close by her.',
-  lines = text.replace(/[():'?0-9]+/g, '').split(/[,\. ]+/g),
-  data = lines.reduce((arr, word) => {
-    let obj = Highcharts.find(arr, obj => obj.name === word);
-    if (obj) {
-      obj.weight += 1;
-    } else {
-      obj = {
-        name: word,
-        weight: 1
-      };
-      arr.push(obj);
+// change the quadruble items color
+const itemsInQuadruble = document.querySelectorAll(
+  ".quadruple-container .body div div"
+);
+for (let i = 0; i < itemsInQuadruble.length; i++) {
+  if (itemsInQuadruble[i].classList.contains("active")) {
+    for (
+      let j = 0;
+      j < itemsInQuadruble[i].previousSibling.previousSibling.children.length;
+      j++
+    ) {
+      itemsInQuadruble[i].previousSibling.previousSibling.children[
+        j
+      ].style.fill = "#2EBB9D";
     }
-    return arr;
-  }, []);
-
-Highcharts.chart('container1', {
-  accessibility: {
-    screenReaderSection: {
-      beforeChartFormat: '<h5>{chartTitle}</h5>' +
-        '<div>{chartSubtitle}</div>' +
-        '<div>{chartLongdesc}</div>' +
-        '<div>{viewTableButton}</div>'
-    }
-  },
-  series: [{
-    type: 'wordcloud',
-    data,
-    name: 'Occurrences'
-  }],
-  title: {
-    text: '',
-    align: 'left'
-  },
-  subtitle: {
-    text: '',
-    align: 'left'
-  },
-  tooltip: {
-    headerFormat: '<span style="font-size: 16px"><b>{point.key}</b></span><br>'
   }
-});
+}
+
+// set the direction (ltr or rtl) of green progress bar
+const rightValue = document.querySelectorAll(
+  ".introvert-extrovert-container .body .right"
+);
+
+const leftValue = document.querySelectorAll(
+  ".introvert-extrovert-container .body .left"
+);
+
+const progressbars = document.querySelectorAll(
+  ".introvert-extrovert-container .body .progressbar"
+);
+
+const greenBars = document.querySelectorAll(
+  ".introvert-extrovert-container .body .progressbar div"
+);
 
 
-Highcharts.chart('container2', {
-  accessibility: {
-    screenReaderSection: {
-      beforeChartFormat: '<h5>{chartTitle}</h5>' +
-        '<div>{chartSubtitle}</div>' +
-        '<div>{chartLongdesc}</div>' +
-        '<div>{viewTableButton}</div>'
-    }
-  },
-  series: [{
-    type: 'wordcloud',
-    data,
-    name: 'Occurrences'
-  }],
-  title: {
-    text: '',
-    align: 'left'
-  },
-  subtitle: {
-    text: '',
-    align: 'left'
-  },
-  tooltip: {
-    headerFormat: '<span style="font-size: 16px"><b>{point.key}</b></span><br>'
+for (let i = 0; i < rightValue.length; i++) {
+  let max = 0;
+  let rightNumber = Number(
+    rightValue[i].children[1].innerHTML.replace("%", "")
+  );
+  let leftNumber = Number(leftValue[i].children[1].innerHTML.replace("%", ""));
+
+  if (rightNumber > leftNumber) {
+    console.log(" rightNumber is big");
+    max = rightNumber;
+    progressbars[i].style.justifyContent = "start";
+  } else {
+    console.log(" leftNumber is big");
+    max = leftNumber;
+    progressbars[i].style.justifyContent = "end";
   }
-});
-
-
-
-
-
-
-Highcharts.chart('container3', {
-  accessibility: {
-    screenReaderSection: {
-      beforeChartFormat: '<h5>{chartTitle}</h5>' +
-        '<div>{chartSubtitle}</div>' +
-        '<div>{chartLongdesc}</div>' +
-        '<div>{viewTableButton}</div>'
-    }
-  },
-  series: [{
-    type: 'wordcloud',
-    data,
-    name: 'Occurrences'
-  }],
-  title: {
-    text: '',
-    align: 'left'
-  },
-  subtitle: {
-    text: '',
-    align: 'left'
-  },
-  tooltip: {
-    headerFormat: '<span style="font-size: 16px"><b>{point.key}</b></span><br>'
-  }
-});
+  console.log( max);
+  greenBars[i].style.width = max + '%';
+}
