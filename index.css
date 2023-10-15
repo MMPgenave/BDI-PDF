@@ -116,25 +116,7 @@ body {
   margin: 0 !important;
 }
 
-@media print {
-  .header-box {
-    position: fixed !important;
-    top: 2rem !important;
-    right: 0 !important;
-    height: 50px !important;
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-  }
 
-  div.footer-type2 {
-    position: fixed !important;
-    bottom: -5px !important;
-    right: 0 !important;
-    height: 70px !important;
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-  }
-}
 .hide_header {
   width: calc(100%);
   height: 75px;
