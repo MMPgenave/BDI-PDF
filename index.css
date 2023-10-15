@@ -118,19 +118,21 @@ body {
 
 @media print {
   .header-box {
-    position: fixed;
-    top: 2rem;
-    right: 0;
-    height: 50px;
+    position: fixed !important;
+    top: 2rem !important;
+    right: 0 !important;
+    height: 50px !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
 
   div.footer-type2 {
-    position: fixed;
-    bottom: -5px;
-    right: 0;
-    height: 70px;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
+    position: fixed !important;
+    bottom: -5px !important;
+    right: 0 !important;
+    height: 70px !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
 }
 .hide_header {
