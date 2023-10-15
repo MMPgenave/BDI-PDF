@@ -25,6 +25,12 @@
           print-color-adjust: exact !important;
         }
       }
+      @media print and (color) {
+        * {
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+      }
     </style>
   </head>
   <body>
