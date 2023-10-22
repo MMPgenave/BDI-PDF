@@ -1079,10 +1079,24 @@ p {
   background: #2ebb9d;
   position: relative;
 }
-.damandTable > div:last-child > div:last-child > div > div > svg {
+
+.damandTable > div:last-child > div:last-child > div > div > .svgANDtext {
   position: absolute;
-  bottom: 1.2rem;
-  right: 0;
+  bottom: 0.25rem;
+}
+
+.damandTable > div:last-child > div:last-child > div > div > .svgANDtext .text {
+  position: absolute;
+  z-index: 1;
+  bottom: 1.35rem;
+  right: 1.1rem;
+  color: #000;
+  text-align: center;
+  font-family: Yekan Bakh;
+  font-size: 7px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 10px; /* 142.857% */
 }
 
 .table-container {
